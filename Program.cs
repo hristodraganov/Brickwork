@@ -87,7 +87,7 @@ namespace brickwork
                             {
                                 for (int jj = 0; jj < input.GetLength(1); jj++)
                                 {
-                                    if (input[ii, jj] != input[ii + 1, jj] && !check[ii, jj] && !check[ii + 1, jj] && !replaced && !check[i, j])
+                                    if (input[ii, jj] != input[ii, jj + 1] && !check[ii, jj] && !check[ii, jj + 1] && !replaced && !check[i, j])
                                     {
                                         output[ii, jj] = current;
                                         output[ii, jj + 1] = current;
@@ -115,44 +115,29 @@ namespace brickwork
             */
             bool match = false;
             //middle
-            if (j > 0 && j + 1 < input.GetLength(0))
+            if (j > 0 && j + 1 < input.GetLength(0) && (input[i, j - 1] == curr || input[i, j + 1] == curr))
             {
-                if (input[i, j - 1] == curr || input[i, j + 1] == curr)
-                {
-                    match = true;
-                }
-                //top left
+                match = true;
             }
-            else if (j == 0)
+            //bottom left
+            else if (i == input.GetLength(1) - 1 && j == 0 && input[i, j + 1] == curr)
             {
-                if (input[i, j + 1] == curr)
-                {
-                    match = true;
-                }
-                //top right
+                match = true;
             }
-            else if (j == input.GetLength(0) - 1)
+            //top left
+            else if (j == 0 && input[i, j + 1] == curr)
             {
-                if (input[i, j - 1] == curr)
-                {
-                    match = true;
-                }
-                //bottom left
+                match = true;
             }
-            else if (i == input.GetLength(1) - 1 && j == 0)
+            //top right
+            else if (j == input.GetLength(0) - 1 && input[i, j - 1] == curr)
             {
-                if (input[i, j + 1] == curr)
-                {
-                    match = true;
-                }
-                //bottom right
+                match = true;
             }
-            else if (i == input.GetLength(1) - 1 && j == input.GetLength(0) - 1)
+            //bottom right
+            else if (i == input.GetLength(1) - 1 && j == input.GetLength(0) - 1 && input[i, j - 1] == curr)
             {
-                if (input[i, j - 1] == curr)
-                {
-                    match = true;
-                }
+                match = true;
             }
             return match;
         }
