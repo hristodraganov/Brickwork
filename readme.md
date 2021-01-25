@@ -10,6 +10,8 @@ Create a console app that accepts input parameters for the given layout of the b
 the first layer, determine the possible layout of the ​ second one, or prove that it is
 impossible to create the ​ second ​ layer and print it in the console.
 
+![image](https://acm.timus.ru/image/get.aspx/a27d1526-1eaf-4276-acdd-0c1a12f9abd5)
+
 **Input**
 
 1. _N_ ​, ​ _M_ — dimensions of the area (both layers’ dimension a.k.a wall thickness/width
