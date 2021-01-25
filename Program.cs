@@ -150,7 +150,7 @@ namespace brickwork
         {
 
             //i am using static array since the point of the task is the algorithm
-            int[,] array = new int[,] { { 1, 1, 2, 4}, { 3, 3, 2, 4} };
+            int[,] array = new int[,] { { 1, 1, 2, 2}, { 3, 3, 4, 4} };
 
             array = solve(array);
             for (int i = 0; i < array.GetLength(0); i++)
