@@ -4,6 +4,7 @@ namespace brickwork
 {
     class Program
     {
+        //NOTE: Solution is not working properly, this is my best shot
         //Algorithm explanation: we keep iterating columns and then rows,
         //checking every single item for its orientation, and based on this,
         //we first iterate the whole array to find 2 matching places,
@@ -149,7 +150,7 @@ namespace brickwork
         {
 
             //i am using static array since the point of the task is the algorithm
-            int[,] array = new int[,] { { 1, 1, 2, 2, 6, 5, 5, 8}, { 3, 3, 4, 4, 6, 7, 7, 8 } };
+            int[,] array = new int[,] { { 1, 1, 2, 4}, { 3, 3, 2, 4} };
 
             array = solve(array);
             for (int i = 0; i < array.GetLength(0); i++)
