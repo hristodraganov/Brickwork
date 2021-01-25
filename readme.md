@@ -34,21 +34,35 @@ bricks spanning 3 rows/ columns.
 5. Surround each brick of the second layer with asterisk and/ or dash symbols - `*`
 and/ or `-`. There should be a single line of symbols between two bricks.
 **Sample
+
 input 
+
 2 4
+
 1 1 2 2
+
 3 3 4 4
+
 output**
+
 2 1 1 4
+
 2 3 3 4
 
 
 **Example 2**
+
 Layer 2 (output)
+
 2 1 1 4 5 5 6 6
+
 2 3 3 4 7 7 8 8
+
 Layer 1 (input)
+
 2 8
+
 1 1 2 2 6 5 5 8
+
 3 3 4 4 6 7 7 8
 
