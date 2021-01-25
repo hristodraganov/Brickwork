@@ -35,6 +35,7 @@ namespace brickwork
                         {
                             for (int jj = 0; jj < input.GetLength(1) - 1; jj++)
                             {
+
                                 if (input[ii, jj] != input[ii, jj + 1] && !check[ii, jj] && !check[ii, jj + 1] && !replaced && !check[i, j])
                                 {
                                     output[ii, jj] = current;
@@ -83,9 +84,9 @@ namespace brickwork
                         }
                         if (!replaced)
                         {
-                            for (int ii = 0; ii < input.GetLength(0) - 1; ii++)
+                            for (int ii = 0; ii < input.GetLength(0); ii++)
                             {
-                                for (int jj = 0; jj < input.GetLength(1); jj++)
+                                for (int jj = 0; jj < input.GetLength(1) - 1; jj++)
                                 {
                                     if (input[ii, jj] != input[ii, jj + 1] && !check[ii, jj] && !check[ii, jj + 1] && !replaced && !check[i, j])
                                     {
@@ -103,6 +104,7 @@ namespace brickwork
             }
             return output;
         }
+
         static bool isHorizontal(int curr, int i, int j, int[,] input)
         {
             /*
@@ -147,7 +149,7 @@ namespace brickwork
         {
 
             //i am using static array since the point of the task is the algorithm
-            int[,] array = new int[,] { { 1, 1, 2, 2 }, { 3, 3, 4, 4 } };
+            int[,] array = new int[,] { { 1, 1, 2, 2, 6, 5, 5, 8}, { 3, 3, 4, 4, 6, 7, 7, 8 } };
 
             array = solve(array);
             for (int i = 0; i < array.GetLength(0); i++)
