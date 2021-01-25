@@ -68,9 +68,9 @@ namespace brickwork
                     }
                     else
                     {
-                        for (int ii = 0; ii < input.GetLength(0) - 1; ii++)
+                        for (int ii = 0; ii < input.GetLength(0); ii++)
                         {
-                            for (int jj = 0; jj < input.GetLength(1); jj++)
+                            for (int jj = 0; jj < input.GetLength(1) - 1; jj++)
                             {
                                 if (input[ii, jj] != input[ii + 1, jj] && !check[ii, jj] && !check[ii + 1, jj] && !replaced && !check[i, j])
                                 {
